@@ -497,13 +497,29 @@
         </div>
 
         <div class="field">
-          <label>Ciudad de residencia <span class="req">*</span></label>
-          <input type="text" name="ciudad" placeholder="Ej: Bogotá" required>
+          <label>Departamento <span class="req">*</span></label>
+          <select name="departamento" id="sel-depto" required onchange="cargarMunicipios(this.value)">
+            <option value="">Seleccione departamento…</option>
+            <option>Amazonas</option><option>Antioquia</option><option>Arauca</option>
+            <option>Atlántico</option><option>Bogotá D.C.</option><option>Bolívar</option>
+            <option>Boyacá</option><option>Caldas</option><option>Caquetá</option>
+            <option>Casanare</option><option>Cauca</option><option>Cesar</option>
+            <option>Chocó</option><option>Córdoba</option><option>Cundinamarca</option>
+            <option>Guainía</option><option>Guaviare</option><option>Huila</option>
+            <option>La Guajira</option><option>Magdalena</option><option>Meta</option>
+            <option>Nariño</option><option>Norte de Santander</option><option>Putumayo</option>
+            <option>Quindío</option><option>Risaralda</option>
+            <option>San Andrés y Providencia</option><option>Santander</option>
+            <option>Sucre</option><option>Tolima</option><option>Valle del Cauca</option>
+            <option>Vaupés</option><option>Vichada</option>
+          </select>
         </div>
 
         <div class="field">
-          <label>Departamento / País</label>
-          <input type="text" name="departamento" placeholder="Ej: Cundinamarca, Colombia">
+          <label>Ciudad / Municipio <span class="req">*</span></label>
+          <select name="ciudad" id="sel-ciudad" required>
+            <option value="">Primero seleccione departamento…</option>
+          </select>
         </div>
 
         <div class="field span-2">
@@ -568,15 +584,189 @@
             </div>
             <div class="field span-2">
               <label>Título obtenido o en curso <span class="req">*</span></label>
-              <input type="text" name="titulo[]" placeholder="Ej: Ingeniería de Sistemas" required>
+              <select name="titulo[]" required onchange="toggleOtroTitulo(this)">
+                <option value="">Seleccione título o profesión…</option>
+                <optgroup label="Ingenierías — Civil y Obras">
+                  <option>Ingeniería Civil</option>
+                  <option>Ingeniería de Vías y Transporte</option>
+                  <option>Ingeniería de Construcción</option>
+                  <option>Ingeniería Topográfica</option>
+                  <option>Ingeniería Catastral y Geodesia</option>
+                  <option>Ingeniería Hidráulica</option>
+                  <option>Ingeniería Sanitaria</option>
+                  <option>Ingeniería Geotécnica</option>
+                  <option>Ingeniería Geológica</option>
+                  <option>Ingeniería de Minas</option>
+                  <option>Ingeniería de Petróleos</option>
+                  <option>Ingeniería Ambiental</option>
+                  <option>Ingeniería Forestal</option>
+                  <option>Ingeniería Agrícola</option>
+                  <option>Ingeniería Agroindustrial</option>
+                </optgroup>
+                <optgroup label="Ingenierías — Industrial y SST">
+                  <option>Ingeniería Industrial</option>
+                  <option>Ingeniería en Seguridad y Salud en el Trabajo</option>
+                  <option>Ingeniería en Higiene y Seguridad Industrial</option>
+                  <option>Ingeniería de Producción</option>
+                  <option>Ingeniería de Calidad</option>
+                  <option>Ingeniería Logística</option>
+                  <option>Ingeniería Administrativa</option>
+                </optgroup>
+                <optgroup label="Ingenierías — Electrónica, Eléctrica y Mecánica">
+                  <option>Ingeniería Mecánica</option>
+                  <option>Ingeniería Mecatrónica</option>
+                  <option>Ingeniería Eléctrica</option>
+                  <option>Ingeniería Electrónica</option>
+                  <option>Ingeniería de Automatización</option>
+                  <option>Ingeniería en Instrumentación</option>
+                  <option>Ingeniería Naval</option>
+                  <option>Ingeniería Aeronáutica</option>
+                  <option>Ingeniería Biomédica</option>
+                </optgroup>
+                <optgroup label="Ingenierías — Sistemas y Telecomunicaciones">
+                  <option>Ingeniería de Sistemas</option>
+                  <option>Ingeniería de Software</option>
+                  <option>Ingeniería de Telecomunicaciones</option>
+                  <option>Ingeniería Informática</option>
+                  <option>Ingeniería Química</option>
+                </optgroup>
+                <optgroup label="Profesional SST / Salud Ocupacional">
+                  <option>Profesional en Seguridad y Salud en el Trabajo</option>
+                  <option>Administrador en Salud Ocupacional</option>
+                  <option>Profesional en Salud Ocupacional</option>
+                  <option>Especialista en Seguridad y Salud en el Trabajo</option>
+                  <option>Especialista en Higiene y Seguridad Industrial</option>
+                  <option>Especialista en Gerencia de Riesgos Laborales</option>
+                  <option>Especialista en Medicina del Trabajo</option>
+                  <option>Maestría en Seguridad y Salud en el Trabajo</option>
+                  <option>Maestría en Salud Ocupacional</option>
+                </optgroup>
+                <optgroup label="Técnicos y Tecnólogos — Obra y Construcción">
+                  <option>Tecnología en Construcción de Edificaciones</option>
+                  <option>Tecnología en Obras Civiles</option>
+                  <option>Tecnología en Topografía</option>
+                  <option>Tecnología en Delineantes de Arquitectura e Ingeniería</option>
+                  <option>Técnico en Construcción</option>
+                  <option>Técnico en Mampostería</option>
+                  <option>Técnico en Instalaciones Hidráulicas y Sanitarias</option>
+                  <option>Técnico en Instalaciones Eléctricas</option>
+                  <option>Técnico en Acabados en Construcción</option>
+                  <option>Técnico en Pintura y Revestimientos</option>
+                  <option>Técnico en Estructuras Metálicas</option>
+                  <option>Técnico en Soldadura</option>
+                  <option>Técnico en Operación de Maquinaria Pesada</option>
+                  <option>Técnico en Mecánica Automotriz</option>
+                  <option>Técnico en Mecánica Industrial</option>
+                  <option>Técnico en Refrigeración y Aire Acondicionado (HVAC)</option>
+                </optgroup>
+                <optgroup label="Técnicos y Tecnólogos — SST">
+                  <option>Tecnología en Seguridad y Salud en el Trabajo</option>
+                  <option>Tecnología en Salud Ocupacional</option>
+                  <option>Tecnología en Higiene y Seguridad Industrial</option>
+                  <option>Técnico en Seguridad y Salud en el Trabajo</option>
+                  <option>Técnico en Salud Ocupacional</option>
+                  <option>Técnico en Prevención de Riesgos Laborales</option>
+                  <option>Técnico Laboral en Auxiliar de SST</option>
+                  <option>Técnico en Primeros Auxilios y Emergencias</option>
+                  <option>Técnico en Manejo Ambiental</option>
+                </optgroup>
+                <optgroup label="Arquitectura y Diseño">
+                  <option>Arquitectura</option>
+                  <option>Diseño Arquitectónico</option>
+                  <option>Diseño de Interiores</option>
+                  <option>Diseño Gráfico</option>
+                  <option>Diseño Industrial</option>
+                </optgroup>
+                <optgroup label="Ciencias de la Salud">
+                  <option>Medicina</option>
+                  <option>Enfermería</option>
+                  <option>Odontología</option>
+                  <option>Farmacia</option>
+                  <option>Bacteriología</option>
+                  <option>Nutrición y Dietética</option>
+                  <option>Fisioterapia</option>
+                  <option>Fonoaudiología</option>
+                  <option>Terapia Ocupacional</option>
+                  <option>Optometría</option>
+                  <option>Psicología</option>
+                  <option>Medicina Veterinaria</option>
+                </optgroup>
+                <optgroup label="Ciencias Económicas y Administrativas">
+                  <option>Administración de Empresas</option>
+                  <option>Contaduría Pública</option>
+                  <option>Economía</option>
+                  <option>Finanzas y Relaciones Internacionales</option>
+                  <option>Mercadeo</option>
+                  <option>Negocios Internacionales</option>
+                  <option>Gestión Humana</option>
+                  <option>Administración Pública</option>
+                  <option>Comercio Exterior</option>
+                </optgroup>
+                <optgroup label="Ciencias Sociales, Jurídicas y Humanas">
+                  <option>Derecho</option>
+                  <option>Trabajo Social</option>
+                  <option>Comunicación Social</option>
+                  <option>Periodismo</option>
+                  <option>Publicidad</option>
+                  <option>Ciencias Políticas</option>
+                  <option>Relaciones Internacionales</option>
+                </optgroup>
+                <optgroup label="Ciencias de la Educación">
+                  <option>Licenciatura en Matemáticas</option>
+                  <option>Licenciatura en Ciencias Naturales</option>
+                  <option>Licenciatura en Lengua Castellana</option>
+                  <option>Licenciatura en Inglés</option>
+                  <option>Licenciatura en Educación Física</option>
+                  <option>Pedagogía Infantil</option>
+                </optgroup>
+                <optgroup label="Tecnologías — Sistemas y Administración">
+                  <option>Tecnología en Sistemas</option>
+                  <option>Tecnología en Gestión Empresarial</option>
+                  <option>Tecnología en Logística</option>
+                  <option>Tecnología en Electrónica</option>
+                  <option>Técnico en Contabilidad</option>
+                  <option>Técnico en Sistemas</option>
+                  <option>Técnico en Electricidad</option>
+                  <option>Técnico Laboral en Salud</option>
+                </optgroup>
+                <optgroup label="Bachillerato">
+                  <option>Bachiller Académico</option>
+                  <option>Bachiller Técnico</option>
+                  <option>Bachiller Pedagógico</option>
+                </optgroup>
+                <optgroup label="Cursos y certificaciones">
+                  <option>Certificación en Trabajo en Alturas (Coordinador)</option>
+                  <option>Certificación en Trabajo en Alturas (Avanzado)</option>
+                  <option>Certificación en Trabajo en Alturas (Básico)</option>
+                  <option>Certificación en Espacios Confinados</option>
+                  <option>Certificación en Manejo de Explosivos</option>
+                  <option>Certificación en Primeros Auxilios</option>
+                  <option>Certificación en Brigadas de Emergencia</option>
+                  <option>Certificación en COPASST</option>
+                  <option>Certificación en ISO 45001</option>
+                  <option>Certificación en ISO 9001</option>
+                  <option>Certificación en ISO 14001</option>
+                  <option>Diplomado en Gerencia de Proyectos (PMI)</option>
+                  <option>Certificación PMP</option>
+                  <option>Certificación SENA</option>
+                  <option>Curso de Inglés</option>
+                  <option>Otro curso / certificación</option>
+                </optgroup>
+                <optgroup label="─────────────────">
+                  <option value="__otro__">Otro (especifique)</option>
+                </optgroup>
+              </select>
+              <input type="text" name="titulo_otro[]" placeholder="Escriba el título o certificación…"
+                style="display:none; margin-top:8px;" maxlength="120"
+                oninput="this.setAttribute('data-val', this.value)">
             </div>
             <div class="field">
               <label>Fecha de inicio</label>
               <input type="date" name="estudio_inicio[]">
             </div>
-            <div class="field">
-              <label>Fecha de graduación / finalización</label>
-              <input type="date" name="estudio_fin[]">
+            <div class="field" id="campo-fin-estudio-1">
+              <label>Fecha de graduación / finalización <span class="req-fin" style="color:var(--accent); display:none;">*</span></label>
+              <input type="date" name="estudio_fin[]" id="fin-estudio-1">
             </div>
           </div>
         </div>
@@ -795,7 +985,86 @@
   let estudiosCount = 1;
   let expCount = 1;
 
-  // Auto calcular edad
+  // ── Municipios por departamento ────────────────────────────────
+  const MUNICIPIOS = {
+    "Amazonas":["Leticia","Puerto Nariño","El Encanto","La Chorrera","La Pedrera","Tarapacá"],
+    "Antioquia":["Medellín","Bello","Itagüí","Envigado","Apartadó","Turbo","Rionegro","Caucasia","Sabaneta","La Estrella","Copacabana","Marinilla","El Bagre","Yarumal","Andes","Santa Fe de Antioquia","Barbosa","Girardota","Caldas","Amaga","Fredonia","Jericó","Jardín","Ciudad Bolívar","Urrao","Necoclí","San Pedro de Urabá","Carepa","Chigorodó","Mutatá"],
+    "Arauca":["Arauca","Saravena","Tame","Fortul","Arauquita","Cravo Norte","Puerto Rondón"],
+    "Atlántico":["Barranquilla","Soledad","Malambo","Sabanalarga","Baranoa","Puerto Colombia","Galapa","Palmar de Varela","Ponedera","Santo Tomás","Sabanagrande","Manatí","Candelaria","Repelón","Luruaco","Campo de la Cruz","Suan","Santa Lucía"],
+    "Bogotá D.C.":["Bogotá"],
+    "Bolívar":["Cartagena","Magangué","El Carmen de Bolívar","Turbaco","Mompós","San Jacinto","Arjona","Villanueva","Córdoba","El Guamo","María La Baja","San Juan Nepomuceno","Zambrano","Simití","San Pablo","Santa Rosa del Sur","Morales","Cantagallo"],
+    "Boyacá":["Tunja","Duitama","Sogamoso","Chiquinquirá","Paipa","Puerto Boyacá","Samacá","Moniquirá","Ramiriquí","Ventaquemada","Garagoa","Santa Rosa de Viterbo","Nobsa","Tibasosa","Firavitoba","Soatá","Boavita"],
+    "Caldas":["Manizales","La Dorada","Chinchiná","Riosucio","Villamaría","Salamina","Manzanares","Marquetalia","Pensilvania","Samaná","Aguadas","Pácora","Supía","Anserma","Viterbo","Belalcázar","Filadelfia"],
+    "Caquetá":["Florencia","San Vicente del Caguán","Puerto Rico","El Doncello","El Paujil","La Montañita","Milán","Albania","Belén de los Andaquíes","Cartagena del Chairá","Curillo","Morelia","Solano","Solita","Valparaíso"],
+    "Casanare":["Yopal","Aguazul","Villanueva","Tauramena","Paz de Ariporo","Pore","Trinidad","Nunchía","Orocué","Monterrey","Sabanalarga","Recetor","Hato Corozal","Maní"],
+    "Cauca":["Popayán","Santander de Quilichao","Puerto Tejada","Patía","El Tambo","Timbío","Cajibío","Piendamó","Morales","Miranda","Corinto","Toribío","Caloto","Suárez","Balboa","Argelia","Rosas"],
+    "Cesar":["Valledupar","Aguachica","Bosconia","Codazzi","La Jagua de Ibirico","Chiriguaná","El Paso","Curumaní","Chimichagua","Tamalameque","Pailitas","Astrea","El Copey","Manaure","San Alberto","González","La Gloria","Pelaya"],
+    "Chocó":["Quibdó","Istmina","Tadó","Condoto","Riosucio","Bahía Solano","Nuquí","Bagadó","Bojayá","Lloró","Sipí","Unguía","Acandí"],
+    "Córdoba":["Montería","Lorica","Cereté","Sahagún","Montelíbano","Planeta Rica","Tierralta","Valencia","Puerto Libertador","Ayapel","Buenavista","Chinú","San Bernardo del Viento","San Pelayo","Ciénaga de Oro","La Apartada","Pueblo Nuevo","Purísima","Tuchín"],
+    "Cundinamarca":["Soacha","Facatativá","Zipaquirá","Fusagasugá","Chía","Mosquera","Madrid","Funza","Cajicá","Girardot","Tocancipá","Sopó","Zipacón","La Calera","Guasca","Gachancipá","Tabio","Tenjo","Cota","Bojacá","El Rosal","Subachoque","Sibaté","Arbeláez","Pasca","San Bernardo","Venecia","Agua de Dios","Ricaurte","Nilo","Viotá","Apulo","Tocaima","Anapoima","La Mesa","El Colegio","Tena"],
+    "Guainía":["Inírida","Barranco Minas","Mapiripana","San Felipe","Puerto Colombia"],
+    "Guaviare":["San José del Guaviare","Calamar","El Retorno","Miraflores"],
+    "Huila":["Neiva","Pitalito","Garzón","La Plata","Campoalegre","Rivera","Palermo","Gigante","Tarqui","Suaza","Acevedo","Isnos","San Agustín","Timaná","Oporapa","Saladoblanco","La Argentina","Nátaga","Tesalia","Yaguará","Hobo","Teruel","Algeciras","Baraya","Tello","Colombia","Villavieja","Aipe"],
+    "La Guajira":["Riohacha","Maicao","Uribia","Manaure","San Juan del Cesar","Villanueva","Fonseca","Barrancas","Albania","Hatonuevo","Dibulla","Distracción","El Molino","Urumita"],
+    "Magdalena":["Santa Marta","Ciénaga","Fundación","El Banco","Plato","Ariguaní","Pivijay","Zona Bananera","Algarrobo","Aracataca","El Retén","Puebloviejo","Sitionuevo","Remolino","Salamina","Concordia","Tenerife","Zapayán","Chivolo","Nueva Granada"],
+    "Meta":["Villavicencio","Acacías","Granada","Puerto López","Puerto Gaitán","San Martín","Cubarral","El Castillo","El Dorado","Fuente de Oro","La Macarena","Lejanías","Mapiripán","Mesetas","Puerto Concordia","Puerto Lleras","Puerto Rico","Restrepo","San Carlos de Guaroa","San Juan de Arama","Uribe","Vistahermosa"],
+    "Nariño":["Pasto","Tumaco","Ipiales","Túquerres","La Unión","Samaniego","Sandoná","El Charco","Barbacoas","Cumbal","Guaitarilla","Linares","Olaya Herrera","Policarpa","Roberto Payán","Taminango","La Cruz","La Florida","Leiva","Magüí","Mallama","Mosquera","Ricaurte","Sapuyes"],
+    "Norte de Santander":["Cúcuta","Ocaña","Pamplona","Villa del Rosario","Los Patios","El Zulia","Tibú","Sardinata","Convención","Teorama","Hacarí","San Calixto","El Tarra","Chinácota","Herrán","Ragonvalia","Toledo","Labateca","Chitagá","Silos","Abrego","Cáchira","El Carmen","Gramalote","Puerto Santander","La Playa"],
+    "Putumayo":["Mocoa","Puerto Asís","Valle del Guamuez","Orito","San Miguel","Villagarzón","Puerto Caicedo","Puerto Guzmán","Puerto Leguízamo","Sibundoy","Colón","Santiago","San Francisco"],
+    "Quindío":["Armenia","Calarcá","Montenegro","La Tebaida","Quimbaya","Circasia","Salento","Buenavista","Córdoba","Filandia","Génova","Pijao"],
+    "Risaralda":["Pereira","Dosquebradas","Santa Rosa de Cabal","La Virginia","Marsella","Quinchía","Santuario","Belén de Umbría","Apía","Guática","Mistrató","Pueblo Rico"],
+    "San Andrés y Providencia":["San Andrés","Providencia","Santa Catalina"],
+    "Santander":["Bucaramanga","Floridablanca","Girón","Piedecuesta","Barrancabermeja","Socorro","San Gil","Málaga","Vélez","Barbosa","Sabana de Torres","Puerto Wilches","Lebrija","Rionegro","San Vicente de Chucurí","El Playón","Betulia","Charalá","Mogotes","Concepción","Curití","Landázuri","Matanza","Puente Nacional","San Benito","Simacota","Suaita","Valle de San José","Vetas","Zapatoca"],
+    "Sucre":["Sincelejo","Corozal","Sampués","San Marcos","Sahagún","Tolú","Coveñas","Morroa","Ovejas","San Onofre","Toluviejo","Buenavista","Caimito","Chalán","Coloso","El Roble","Galeras","Guaranda","La Unión","Los Palmitos","Majagual","Palmito","San Benito Abad","San Luis de Sincé","San Pedro","Santiago de Tolú","Sucre"],
+    "Tolima":["Ibagué","Espinal","Melgar","Honda","Líbano","Guamo","Chaparral","Mariquita","Fresno","Armero-Guayabal","Alvarado","Ambalema","Anzoátegui","Ataco","Cajamarca","Casabianca","Coello","Coyaima","Cunday","Dolores","Falán","Flandes","Herveo","Icononzo","Lérida","Murillo","Natagaima","Ortega","Palocabildo","Piedras","Planadas","Prado","Purificación","Rovira","Saldaña","San Antonio","San Luis","Santa Isabel","Suárez","Valle de San Juan","Venadillo","Villahermosa","Villarrica"],
+    "Valle del Cauca":["Cali","Buenaventura","Palmira","Buga","Tulúa","Cartago","Yumbo","Jamundí","Candelaria","Pradera","Florida","Ginebra","Guacarí","El Cerrito","Dagua","La Cumbre","Vijes","Yotoco","Riofrío","Trujillo","Bolívar","Roldanillo","La Unión","La Victoria","Zarzal","Ansermanuevo","El Águila","El Cairo","Versalles","Argelia","El Dovio","Calima","Restrepo","Sevilla","Caicedonia","Alcalá","Ulloa","Obando","Toro","Bugalagrande"],
+    "Vaupés":["Mitú","Carurú","Taraira","Pacoa","Papunaua","Yavaraté"],
+    "Vichada":["Puerto Carreño","La Primavera","Santa Rosalía","Cumaribo"]
+  };
+
+  function cargarMunicipios(depto) {
+    const sel = document.getElementById('sel-ciudad');
+    sel.innerHTML = '<option value="">Seleccione municipio…</option>';
+    if (!depto || !MUNICIPIOS[depto]) return;
+    MUNICIPIOS[depto].sort().forEach(function(m) {
+      const opt = document.createElement('option');
+      opt.value = m; opt.textContent = m;
+      sel.appendChild(opt);
+    });
+  }
+
+  // ── Mostrar campo "Otro título" cuando se selecciona ──────────
+  function toggleOtroTitulo(sel) {
+    const campo = sel.parentElement.querySelector('[name="titulo_otro[]"]');
+    if (!campo) return;
+    const esOtro = sel.value === '__otro__';
+    campo.style.display  = esOtro ? 'block' : 'none';
+    campo.required       = esOtro;
+    if (!esOtro) campo.value = '';
+  }
+
+  // ── Fecha fin obligatoria si estado es Graduado o Incompleto ───
+  function toggleFinEstudio(selEstado) {
+    const card     = selEstado.closest('.entry-card');
+    const finInput = card.querySelector('[name="estudio_fin[]"]');
+    const reqSpan  = card.querySelector('.req-fin');
+    const esTerminado = ['Graduado','Incompleto'].includes(selEstado.value);
+    if (finInput) {
+      finInput.required = esTerminado;
+      finInput.style.borderColor = '';
+    }
+    if (reqSpan) reqSpan.style.display = esTerminado ? 'inline' : 'none';
+  }
+
+  // Activar listener en el primer estudio
+  document.addEventListener('DOMContentLoaded', function() {
+    const primerEstado = document.querySelector('[name="estado_estudio[]"]');
+    if (primerEstado) primerEstado.addEventListener('change', function() {
+      toggleFinEstudio(this);
+    });
+  });
+
+  // ── Auto calcular edad ─────────────────────────────────────────
   document.querySelector('[name="fecha_nacimiento"]').addEventListener('change', function() {
     const hoy = new Date();
     const nac = new Date(this.value);
@@ -826,7 +1095,7 @@
         </div>
         <div class="field">
           <label>Estado</label>
-          <select name="estado_estudio[]">
+          <select name="estado_estudio[]" onchange="toggleFinEstudio(this)">
             <option value="">Seleccione…</option>
             <option>En curso</option><option>Graduado</option><option>Incompleto</option>
           </select>
@@ -837,18 +1106,39 @@
         </div>
         <div class="field span-2">
           <label>Título obtenido o en curso</label>
-          <input type="text" name="titulo[]" placeholder="Ej: Técnico en Contabilidad">
+          <select name="titulo[]" onchange="toggleOtroTitulo(this)">
+            <option value="">Seleccione título o profesión…</option>
+            <optgroup label="Ingenierías — Civil y Obras"><option>Ingeniería Civil</option><option>Ingeniería de Vías y Transporte</option><option>Ingeniería de Construcción</option><option>Ingeniería Topográfica</option><option>Ingeniería Catastral y Geodesia</option><option>Ingeniería Hidráulica</option><option>Ingeniería Sanitaria</option><option>Ingeniería Geotécnica</option><option>Ingeniería Geológica</option><option>Ingeniería de Minas</option><option>Ingeniería de Petróleos</option><option>Ingeniería Ambiental</option><option>Ingeniería Forestal</option><option>Ingeniería Agrícola</option><option>Ingeniería Agroindustrial</option></optgroup>
+            <optgroup label="Ingenierías — Industrial y SST"><option>Ingeniería Industrial</option><option>Ingeniería en Seguridad y Salud en el Trabajo</option><option>Ingeniería en Higiene y Seguridad Industrial</option><option>Ingeniería de Producción</option><option>Ingeniería de Calidad</option><option>Ingeniería Logística</option><option>Ingeniería Administrativa</option></optgroup>
+            <optgroup label="Ingenierías — Electrónica, Eléctrica y Mecánica"><option>Ingeniería Mecánica</option><option>Ingeniería Mecatrónica</option><option>Ingeniería Eléctrica</option><option>Ingeniería Electrónica</option><option>Ingeniería de Automatización</option><option>Ingeniería en Instrumentación</option><option>Ingeniería Naval</option><option>Ingeniería Aeronáutica</option><option>Ingeniería Biomédica</option></optgroup>
+            <optgroup label="Ingenierías — Sistemas y Telecomunicaciones"><option>Ingeniería de Sistemas</option><option>Ingeniería de Software</option><option>Ingeniería de Telecomunicaciones</option><option>Ingeniería Informática</option><option>Ingeniería Química</option></optgroup>
+            <optgroup label="Profesional SST / Salud Ocupacional"><option>Profesional en Seguridad y Salud en el Trabajo</option><option>Administrador en Salud Ocupacional</option><option>Profesional en Salud Ocupacional</option><option>Especialista en Seguridad y Salud en el Trabajo</option><option>Especialista en Higiene y Seguridad Industrial</option><option>Especialista en Gerencia de Riesgos Laborales</option><option>Especialista en Medicina del Trabajo</option><option>Maestría en Seguridad y Salud en el Trabajo</option><option>Maestría en Salud Ocupacional</option></optgroup>
+            <optgroup label="Técnicos y Tecnólogos — Obra y Construcción"><option>Tecnología en Construcción de Edificaciones</option><option>Tecnología en Obras Civiles</option><option>Tecnología en Topografía</option><option>Tecnología en Delineantes de Arquitectura e Ingeniería</option><option>Técnico en Construcción</option><option>Técnico en Mampostería</option><option>Técnico en Instalaciones Hidráulicas y Sanitarias</option><option>Técnico en Instalaciones Eléctricas</option><option>Técnico en Acabados en Construcción</option><option>Técnico en Pintura y Revestimientos</option><option>Técnico en Estructuras Metálicas</option><option>Técnico en Soldadura</option><option>Técnico en Operación de Maquinaria Pesada</option><option>Técnico en Mecánica Automotriz</option><option>Técnico en Mecánica Industrial</option><option>Técnico en Refrigeración y Aire Acondicionado (HVAC)</option></optgroup>
+            <optgroup label="Técnicos y Tecnólogos — SST"><option>Tecnología en Seguridad y Salud en el Trabajo</option><option>Tecnología en Salud Ocupacional</option><option>Tecnología en Higiene y Seguridad Industrial</option><option>Técnico en Seguridad y Salud en el Trabajo</option><option>Técnico en Salud Ocupacional</option><option>Técnico en Prevención de Riesgos Laborales</option><option>Técnico Laboral en Auxiliar de SST</option><option>Técnico en Primeros Auxilios y Emergencias</option><option>Técnico en Manejo Ambiental</option></optgroup>
+            <optgroup label="Arquitectura y Diseño"><option>Arquitectura</option><option>Diseño Arquitectónico</option><option>Diseño de Interiores</option><option>Diseño Gráfico</option><option>Diseño Industrial</option></optgroup>
+            <optgroup label="Ciencias de la Salud"><option>Medicina</option><option>Enfermería</option><option>Odontología</option><option>Farmacia</option><option>Bacteriología</option><option>Nutrición y Dietética</option><option>Fisioterapia</option><option>Fonoaudiología</option><option>Terapia Ocupacional</option><option>Optometría</option><option>Psicología</option><option>Medicina Veterinaria</option></optgroup>
+            <optgroup label="Ciencias Económicas y Administrativas"><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Economía</option><option>Mercadeo</option><option>Negocios Internacionales</option><option>Gestión Humana</option><option>Administración Pública</option><option>Comercio Exterior</option></optgroup>
+            <optgroup label="Ciencias Sociales, Jurídicas y Humanas"><option>Derecho</option><option>Trabajo Social</option><option>Comunicación Social</option><option>Periodismo</option><option>Publicidad</option><option>Ciencias Políticas</option></optgroup>
+            <optgroup label="Tecnologías — Sistemas y Administración"><option>Tecnología en Sistemas</option><option>Tecnología en Gestión Empresarial</option><option>Tecnología en Logística</option><option>Tecnología en Electrónica</option><option>Técnico en Contabilidad</option><option>Técnico en Sistemas</option><option>Técnico en Electricidad</option></optgroup>
+            <optgroup label="Bachillerato"><option>Bachiller Académico</option><option>Bachiller Técnico</option><option>Bachiller Pedagógico</option></optgroup>
+            <optgroup label="Cursos y certificaciones"><option>Certificación en Trabajo en Alturas (Coordinador)</option><option>Certificación en Trabajo en Alturas (Avanzado)</option><option>Certificación en Trabajo en Alturas (Básico)</option><option>Certificación en Espacios Confinados</option><option>Certificación en Manejo de Explosivos</option><option>Certificación en Primeros Auxilios</option><option>Certificación en Brigadas de Emergencia</option><option>Certificación en COPASST</option><option>Certificación en ISO 45001</option><option>Certificación en ISO 9001</option><option>Certificación en ISO 14001</option><option>Diplomado en Gerencia de Proyectos (PMI)</option><option>Certificación PMP</option><option>Certificación SENA</option><option>Curso de Inglés</option><option>Otro curso / certificación</option></optgroup>
+            <optgroup label="─────────────────"><option value="__otro__">Otro (especifique)</option></optgroup>
+          </select>
+          <input type="text" name="titulo_otro[]" placeholder="Escriba el título o certificación…"
+            style="display:none; margin-top:8px;" maxlength="120">
         </div>
         <div class="field">
           <label>Fecha de inicio</label>
           <input type="date" name="estudio_inicio[]">
         </div>
         <div class="field">
-          <label>Fecha de finalización</label>
+          <label>Fecha de graduación / finalización <span class="req-fin" style="color:var(--accent); display:none;">*</span></label>
           <input type="date" name="estudio_fin[]">
         </div>
       </div>`;
     group.appendChild(card);
+    const estado = card.querySelector('[name="estado_estudio[]"]');
+    if (estado) estado.addEventListener('change', function() { toggleFinEstudio(this); });
   }
 
   function agregarExperiencia() {
@@ -937,11 +1227,16 @@
     // ── Recoger estudios (todas las tarjetas) ────────────────────
     const estudios = [];
     document.querySelectorAll('#estudios-group .entry-card').forEach(card => {
+      const selTitulo = card.querySelector('[name="titulo[]"]');
+      const otroTitulo = card.querySelector('[name="titulo_otro[]"]');
+      const titulo = (selTitulo?.value === '__otro__')
+        ? (otroTitulo?.value || '')
+        : (selTitulo?.value || '');
       estudios.push({
         nivel:        card.querySelector('[name="nivel_estudio[]"]')?.value  || "",
         estado:       card.querySelector('[name="estado_estudio[]"]')?.value || "",
         institucion:  card.querySelector('[name="institucion[]"]')?.value    || "",
-        titulo:       card.querySelector('[name="titulo[]"]')?.value         || "",
+        titulo:       titulo,
         fecha_inicio: card.querySelector('[name="estudio_inicio[]"]')?.value || "",
         fecha_fin:    card.querySelector('[name="estudio_fin[]"]')?.value    || "",
       });
