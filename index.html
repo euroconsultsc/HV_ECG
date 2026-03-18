@@ -586,7 +586,7 @@
               <label>Título obtenido o en curso <span class="req">*</span></label>
               <select name="titulo[]" required onchange="toggleOtroTitulo(this)">
                 <option value="">Seleccione título o profesión…</option>
-                <optgroup label="Ingenierías — Civil y Obras">
+                <optgroup label="Ingenierías — Civil, Obras e Infraestructura">
                   <option>Ingeniería Civil</option>
                   <option>Ingeniería de Vías y Transporte</option>
                   <option>Ingeniería de Construcción</option>
@@ -602,8 +602,13 @@
                   <option>Ingeniería Forestal</option>
                   <option>Ingeniería Agrícola</option>
                   <option>Ingeniería Agroindustrial</option>
+                  <option>Ingeniería de Recursos Hídricos</option>
+                  <option>Ingeniería Sísmica y Geotécnica</option>
+                  <option>Ingeniería de Tránsito y Transporte</option>
+                  <option>Ingeniería Oceánica</option>
+                  <option>Ingeniería en Planeación y Desarrollo Urbano</option>
                 </optgroup>
-                <optgroup label="Ingenierías — Industrial y SST">
+                <optgroup label="Ingenierías — Industrial, SST y Calidad">
                   <option>Ingeniería Industrial</option>
                   <option>Ingeniería en Seguridad y Salud en el Trabajo</option>
                   <option>Ingeniería en Higiene y Seguridad Industrial</option>
@@ -611,8 +616,12 @@
                   <option>Ingeniería de Calidad</option>
                   <option>Ingeniería Logística</option>
                   <option>Ingeniería Administrativa</option>
+                  <option>Ingeniería de Procesos</option>
+                  <option>Ingeniería en Gestión Empresarial</option>
+                  <option>Ingeniería Financiera</option>
+                  <option>Ingeniería en Seguridad Industrial y Minería</option>
                 </optgroup>
-                <optgroup label="Ingenierías — Electrónica, Eléctrica y Mecánica">
+                <optgroup label="Ingenierías — Eléctrica, Mecánica y Energía">
                   <option>Ingeniería Mecánica</option>
                   <option>Ingeniería Mecatrónica</option>
                   <option>Ingeniería Eléctrica</option>
@@ -622,13 +631,23 @@
                   <option>Ingeniería Naval</option>
                   <option>Ingeniería Aeronáutica</option>
                   <option>Ingeniería Biomédica</option>
+                  <option>Ingeniería en Energías Renovables</option>
+                  <option>Ingeniería en Eficiencia Energética</option>
+                  <option>Ingeniería en Gas y Petróleo</option>
+                  <option>Ingeniería Termofluidos</option>
+                  <option>Ingeniería de Mantenimiento</option>
+                  <option>Ingeniería de Refrigeración y Climatización</option>
                 </optgroup>
-                <optgroup label="Ingenierías — Sistemas y Telecomunicaciones">
+                <optgroup label="Ingenierías — Sistemas, Software y Datos">
                   <option>Ingeniería de Sistemas</option>
                   <option>Ingeniería de Software</option>
                   <option>Ingeniería de Telecomunicaciones</option>
                   <option>Ingeniería Informática</option>
                   <option>Ingeniería Química</option>
+                  <option>Ingeniería en Ciberseguridad</option>
+                  <option>Ingeniería en Inteligencia Artificial</option>
+                  <option>Ingeniería en Ciencia de Datos</option>
+                  <option>Ingeniería en Redes y Comunicaciones</option>
                 </optgroup>
                 <optgroup label="Profesional SST / Salud Ocupacional">
                   <option>Profesional en Seguridad y Salud en el Trabajo</option>
@@ -638,14 +657,21 @@
                   <option>Especialista en Higiene y Seguridad Industrial</option>
                   <option>Especialista en Gerencia de Riesgos Laborales</option>
                   <option>Especialista en Medicina del Trabajo</option>
+                  <option>Especialista en Ergonomía</option>
+                  <option>Especialista en Toxicología Industrial</option>
                   <option>Maestría en Seguridad y Salud en el Trabajo</option>
                   <option>Maestría en Salud Ocupacional</option>
+                  <option>Maestría en Higiene Industrial</option>
                 </optgroup>
                 <optgroup label="Técnicos y Tecnólogos — Obra y Construcción">
                   <option>Tecnología en Construcción de Edificaciones</option>
                   <option>Tecnología en Obras Civiles</option>
                   <option>Tecnología en Topografía</option>
                   <option>Tecnología en Delineantes de Arquitectura e Ingeniería</option>
+                  <option>Tecnología en Gestión de Obras Civiles</option>
+                  <option>Tecnología en Construcción de Acabados</option>
+                  <option>Tecnología en Instalaciones Hidrosanitarias</option>
+                  <option>Tecnología en Geotecnia</option>
                   <option>Técnico en Construcción</option>
                   <option>Técnico en Mampostería</option>
                   <option>Técnico en Instalaciones Hidráulicas y Sanitarias</option>
@@ -658,6 +684,10 @@
                   <option>Técnico en Mecánica Automotriz</option>
                   <option>Técnico en Mecánica Industrial</option>
                   <option>Técnico en Refrigeración y Aire Acondicionado (HVAC)</option>
+                  <option>Técnico en Mantenimiento de Infraestructura</option>
+                  <option>Técnico en Fontanería y Gas</option>
+                  <option>Técnico en Obras de Pavimentación</option>
+                  <option>Técnico en Prefabricados de Concreto</option>
                 </optgroup>
                 <optgroup label="Técnicos y Tecnólogos — SST">
                   <option>Tecnología en Seguridad y Salud en el Trabajo</option>
@@ -733,6 +763,146 @@
                   <option>Bachiller Académico</option>
                   <option>Bachiller Técnico</option>
                   <option>Bachiller Pedagógico</option>
+                </optgroup>
+                <optgroup label="Especializaciones — SST y Salud Ocupacional">
+                  <option>Especialización en Seguridad y Salud en el Trabajo</option>
+                  <option>Especialización en Higiene y Seguridad Industrial</option>
+                  <option>Especialización en Salud Ocupacional</option>
+                  <option>Especialización en Gerencia de Riesgos Laborales</option>
+                  <option>Especialización en Medicina del Trabajo</option>
+                  <option>Especialización en Ergonomía Ocupacional</option>
+                  <option>Especialización en Toxicología Industrial</option>
+                  <option>Especialización en Epidemiología Laboral</option>
+                  <option>Especialización en Seguridad Industrial y Minería</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Gerencia de Proyectos">
+                  <option>Especialización en Gerencia de Proyectos</option>
+                  <option>Especialización en Gestión de Proyectos de Construcción</option>
+                  <option>Especialización en Dirección y Gestión de Proyectos</option>
+                  <option>Especialización en Gerencia de Obra</option>
+                  <option>Especialización en Interventoría de Obras</option>
+                  <option>Especialización en Gestión de Infraestructura</option>
+                  <option>Especialización en Planeación y Control de Proyectos</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Ingeniería Civil y Obras">
+                  <option>Especialización en Ingeniería de Vías y Transporte</option>
+                  <option>Especialización en Geotecnia y Cimentaciones</option>
+                  <option>Especialización en Estructuras</option>
+                  <option>Especialización en Hidráulica y Saneamiento Ambiental</option>
+                  <option>Especialización en Diseño Sísmico de Estructuras</option>
+                  <option>Especialización en Construcción Sostenible</option>
+                  <option>Especialización en Ingeniería de Pavimentos</option>
+                  <option>Especialización en Recursos Hídricos</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Medio Ambiente y Sostenibilidad">
+                  <option>Especialización en Gestión Ambiental</option>
+                  <option>Especialización en Gestión Ambiental Empresarial</option>
+                  <option>Especialización en Ingeniería Ambiental y Sanitaria</option>
+                  <option>Especialización en Evaluación de Impacto Ambiental</option>
+                  <option>Especialización en Gestión de Residuos Sólidos</option>
+                  <option>Especialización en Cambio Climático y Desarrollo Sostenible</option>
+                  <option>Especialización en Ecología y Gestión del Territorio</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Administración y Gerencia">
+                  <option>Especialización en Gerencia de Empresas</option>
+                  <option>Especialización en Alta Gerencia</option>
+                  <option>Especialización en Finanzas Corporativas</option>
+                  <option>Especialización en Gestión del Talento Humano</option>
+                  <option>Especialización en Gestión Pública</option>
+                  <option>Especialización en Contratación Estatal</option>
+                  <option>Especialización en Logística y Cadena de Suministro</option>
+                  <option>Especialización en Gerencia de Mercadeo</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Derecho Laboral y Seguridad Social">
+                  <option>Especialización en Derecho Laboral y Seguridad Social</option>
+                  <option>Especialización en Derecho Administrativo</option>
+                  <option>Especialización en Derecho de la Construcción</option>
+                  <option>Especialización en Contratación Laboral</option>
+                  <option>Especialización en Seguridad Social Integral</option>
+                  <option>Especialización en Riesgos Laborales y Pensiones</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Calidad e ISO">
+                  <option>Especialización en Sistemas Integrados de Gestión</option>
+                  <option>Especialización en Gestión de Calidad ISO 9001</option>
+                  <option>Especialización en Gestión Ambiental ISO 14001</option>
+                  <option>Especialización en SST ISO 45001</option>
+                  <option>Especialización en Auditoría de Sistemas de Gestión</option>
+                  <option>Especialización en Control de Calidad en Construcción</option>
+                  <option>Especialización en Metrología y Normalización</option>
+                </optgroup>
+                <optgroup label="Especializaciones — Mecánica, Eléctrica y Mantenimiento">
+                  <option>Especialización en Ingeniería de Mantenimiento</option>
+                  <option>Especialización en Automatización Industrial</option>
+                  <option>Especialización en Confiabilidad de Activos</option>
+                  <option>Especialización en Sistemas de Potencia Eléctrica</option>
+                  <option>Especialización en Mecatrónica y Robótica</option>
+                  <option>Especialización en Instrumentación y Control</option>
+                  <option>Especialización en Energías Renovables</option>
+                  <option>Especialización en Eficiencia Energética</option>
+                </optgroup>
+                <optgroup label="Maestrías — SST y Salud Ocupacional">
+                  <option>Maestría en Seguridad y Salud en el Trabajo</option>
+                  <option>Maestría en Salud Ocupacional</option>
+                  <option>Maestría en Higiene Industrial</option>
+                  <option>Maestría en Prevención de Riesgos Laborales</option>
+                  <option>Maestría en Epidemiología</option>
+                  <option>Maestría en Toxicología</option>
+                </optgroup>
+                <optgroup label="Maestrías — Gerencia de Proyectos">
+                  <option>Maestría en Gerencia de Proyectos</option>
+                  <option>Maestría en Project Management</option>
+                  <option>Maestría en Gestión de Infraestructura</option>
+                  <option>Maestría en Dirección de Proyectos de Construcción</option>
+                  <option>Maestría en Interventoría y Supervisión de Obras</option>
+                </optgroup>
+                <optgroup label="Maestrías — Ingeniería Civil y Obras">
+                  <option>Maestría en Ingeniería Civil</option>
+                  <option>Maestría en Ingeniería de Vías</option>
+                  <option>Maestría en Geotecnia</option>
+                  <option>Maestría en Estructuras</option>
+                  <option>Maestría en Hidráulica</option>
+                  <option>Maestría en Ingeniería de Pavimentos</option>
+                  <option>Maestría en Construcción</option>
+                </optgroup>
+                <optgroup label="Maestrías — Medio Ambiente y Sostenibilidad">
+                  <option>Maestría en Gestión Ambiental</option>
+                  <option>Maestría en Ingeniería Ambiental</option>
+                  <option>Maestría en Desarrollo Sostenible</option>
+                  <option>Maestría en Cambio Climático</option>
+                  <option>Maestría en Gestión de Recursos Naturales</option>
+                </optgroup>
+                <optgroup label="Maestrías — Administración y Gerencia">
+                  <option>Maestría en Administración de Empresas (MBA)</option>
+                  <option>Maestría en Gerencia Empresarial</option>
+                  <option>Maestría en Finanzas</option>
+                  <option>Maestría en Gestión del Talento Humano</option>
+                  <option>Maestría en Gestión Pública</option>
+                </optgroup>
+                <optgroup label="Maestrías — Derecho Laboral">
+                  <option>Maestría en Derecho Laboral y Seguridad Social</option>
+                  <option>Maestría en Derecho Administrativo</option>
+                  <option>Maestría en Seguridad Social</option>
+                </optgroup>
+                <optgroup label="Maestrías — Calidad e ISO">
+                  <option>Maestría en Sistemas Integrados de Gestión</option>
+                  <option>Maestría en Gestión de Calidad</option>
+                  <option>Maestría en Ingeniería Industrial</option>
+                </optgroup>
+                <optgroup label="Maestrías — Mecánica, Eléctrica y Mantenimiento">
+                  <option>Maestría en Ingeniería Mecánica</option>
+                  <option>Maestría en Ingeniería Eléctrica</option>
+                  <option>Maestría en Mantenimiento Industrial</option>
+                  <option>Maestría en Automatización y Control</option>
+                  <option>Maestría en Energías Renovables</option>
+                </optgroup>
+                <optgroup label="Doctorados">
+                  <option>Doctorado en Ingeniería Civil</option>
+                  <option>Doctorado en Ingeniería Industrial</option>
+                  <option>Doctorado en Ciencias Ambientales</option>
+                  <option>Doctorado en Salud Pública</option>
+                  <option>Doctorado en Administración</option>
+                  <option>Doctorado en Ingeniería Mecánica</option>
+                  <option>Otro Doctorado</option>
                 </optgroup>
                 <optgroup label="Cursos y certificaciones">
                   <option>Certificación en Trabajo en Alturas (Coordinador)</option>
@@ -1108,18 +1278,35 @@
           <label>Título obtenido o en curso</label>
           <select name="titulo[]" onchange="toggleOtroTitulo(this)">
             <option value="">Seleccione título o profesión…</option>
-            <optgroup label="Ingenierías — Civil y Obras"><option>Ingeniería Civil</option><option>Ingeniería de Vías y Transporte</option><option>Ingeniería de Construcción</option><option>Ingeniería Topográfica</option><option>Ingeniería Catastral y Geodesia</option><option>Ingeniería Hidráulica</option><option>Ingeniería Sanitaria</option><option>Ingeniería Geotécnica</option><option>Ingeniería Geológica</option><option>Ingeniería de Minas</option><option>Ingeniería de Petróleos</option><option>Ingeniería Ambiental</option><option>Ingeniería Forestal</option><option>Ingeniería Agrícola</option><option>Ingeniería Agroindustrial</option></optgroup>
-            <optgroup label="Ingenierías — Industrial y SST"><option>Ingeniería Industrial</option><option>Ingeniería en Seguridad y Salud en el Trabajo</option><option>Ingeniería en Higiene y Seguridad Industrial</option><option>Ingeniería de Producción</option><option>Ingeniería de Calidad</option><option>Ingeniería Logística</option><option>Ingeniería Administrativa</option></optgroup>
-            <optgroup label="Ingenierías — Electrónica, Eléctrica y Mecánica"><option>Ingeniería Mecánica</option><option>Ingeniería Mecatrónica</option><option>Ingeniería Eléctrica</option><option>Ingeniería Electrónica</option><option>Ingeniería de Automatización</option><option>Ingeniería en Instrumentación</option><option>Ingeniería Naval</option><option>Ingeniería Aeronáutica</option><option>Ingeniería Biomédica</option></optgroup>
-            <optgroup label="Ingenierías — Sistemas y Telecomunicaciones"><option>Ingeniería de Sistemas</option><option>Ingeniería de Software</option><option>Ingeniería de Telecomunicaciones</option><option>Ingeniería Informática</option><option>Ingeniería Química</option></optgroup>
-            <optgroup label="Profesional SST / Salud Ocupacional"><option>Profesional en Seguridad y Salud en el Trabajo</option><option>Administrador en Salud Ocupacional</option><option>Profesional en Salud Ocupacional</option><option>Especialista en Seguridad y Salud en el Trabajo</option><option>Especialista en Higiene y Seguridad Industrial</option><option>Especialista en Gerencia de Riesgos Laborales</option><option>Especialista en Medicina del Trabajo</option><option>Maestría en Seguridad y Salud en el Trabajo</option><option>Maestría en Salud Ocupacional</option></optgroup>
-            <optgroup label="Técnicos y Tecnólogos — Obra y Construcción"><option>Tecnología en Construcción de Edificaciones</option><option>Tecnología en Obras Civiles</option><option>Tecnología en Topografía</option><option>Tecnología en Delineantes de Arquitectura e Ingeniería</option><option>Técnico en Construcción</option><option>Técnico en Mampostería</option><option>Técnico en Instalaciones Hidráulicas y Sanitarias</option><option>Técnico en Instalaciones Eléctricas</option><option>Técnico en Acabados en Construcción</option><option>Técnico en Pintura y Revestimientos</option><option>Técnico en Estructuras Metálicas</option><option>Técnico en Soldadura</option><option>Técnico en Operación de Maquinaria Pesada</option><option>Técnico en Mecánica Automotriz</option><option>Técnico en Mecánica Industrial</option><option>Técnico en Refrigeración y Aire Acondicionado (HVAC)</option></optgroup>
+            <optgroup label="Ingenierías — Civil, Obras e Infraestructura"><option>Ingeniería Civil</option><option>Ingeniería de Vías y Transporte</option><option>Ingeniería de Construcción</option><option>Ingeniería Topográfica</option><option>Ingeniería Catastral y Geodesia</option><option>Ingeniería Hidráulica</option><option>Ingeniería Sanitaria</option><option>Ingeniería Geotécnica</option><option>Ingeniería Geológica</option><option>Ingeniería de Minas</option><option>Ingeniería de Petróleos</option><option>Ingeniería Ambiental</option><option>Ingeniería Forestal</option><option>Ingeniería Agrícola</option><option>Ingeniería Agroindustrial</option><option>Ingeniería de Recursos Hídricos</option><option>Ingeniería Sísmica y Geotécnica</option><option>Ingeniería de Tránsito y Transporte</option><option>Ingeniería en Planeación y Desarrollo Urbano</option></optgroup>
+            <optgroup label="Ingenierías — Industrial, SST y Calidad"><option>Ingeniería Industrial</option><option>Ingeniería en Seguridad y Salud en el Trabajo</option><option>Ingeniería en Higiene y Seguridad Industrial</option><option>Ingeniería de Producción</option><option>Ingeniería de Calidad</option><option>Ingeniería Logística</option><option>Ingeniería Administrativa</option><option>Ingeniería de Procesos</option><option>Ingeniería en Gestión Empresarial</option><option>Ingeniería Financiera</option><option>Ingeniería en Seguridad Industrial y Minería</option></optgroup>
+            <optgroup label="Ingenierías — Eléctrica, Mecánica y Energía"><option>Ingeniería Mecánica</option><option>Ingeniería Mecatrónica</option><option>Ingeniería Eléctrica</option><option>Ingeniería Electrónica</option><option>Ingeniería de Automatización</option><option>Ingeniería en Instrumentación</option><option>Ingeniería Naval</option><option>Ingeniería Aeronáutica</option><option>Ingeniería Biomédica</option><option>Ingeniería en Energías Renovables</option><option>Ingeniería en Eficiencia Energética</option><option>Ingeniería de Mantenimiento</option><option>Ingeniería Termofluidos</option></optgroup>
+            <optgroup label="Ingenierías — Sistemas, Software y Datos"><option>Ingeniería de Sistemas</option><option>Ingeniería de Software</option><option>Ingeniería de Telecomunicaciones</option><option>Ingeniería Informática</option><option>Ingeniería Química</option><option>Ingeniería en Ciberseguridad</option><option>Ingeniería en Ciencia de Datos</option><option>Ingeniería en Redes y Comunicaciones</option></optgroup>
+            <optgroup label="Profesional SST / Salud Ocupacional"><option>Profesional en Seguridad y Salud en el Trabajo</option><option>Administrador en Salud Ocupacional</option><option>Profesional en Salud Ocupacional</option></optgroup>
+            <optgroup label="Técnicos y Tecnólogos — Obra y Construcción"><option>Tecnología en Construcción de Edificaciones</option><option>Tecnología en Obras Civiles</option><option>Tecnología en Topografía</option><option>Tecnología en Delineantes de Arquitectura e Ingeniería</option><option>Tecnología en Gestión de Obras Civiles</option><option>Tecnología en Geotecnia</option><option>Técnico en Construcción</option><option>Técnico en Mampostería</option><option>Técnico en Instalaciones Hidráulicas y Sanitarias</option><option>Técnico en Instalaciones Eléctricas</option><option>Técnico en Acabados en Construcción</option><option>Técnico en Pintura y Revestimientos</option><option>Técnico en Estructuras Metálicas</option><option>Técnico en Soldadura</option><option>Técnico en Operación de Maquinaria Pesada</option><option>Técnico en Mecánica Automotriz</option><option>Técnico en Mecánica Industrial</option><option>Técnico en Refrigeración y Aire Acondicionado (HVAC)</option><option>Técnico en Mantenimiento de Infraestructura</option><option>Técnico en Fontanería y Gas</option><option>Técnico en Obras de Pavimentación</option></optgroup>
             <optgroup label="Técnicos y Tecnólogos — SST"><option>Tecnología en Seguridad y Salud en el Trabajo</option><option>Tecnología en Salud Ocupacional</option><option>Tecnología en Higiene y Seguridad Industrial</option><option>Técnico en Seguridad y Salud en el Trabajo</option><option>Técnico en Salud Ocupacional</option><option>Técnico en Prevención de Riesgos Laborales</option><option>Técnico Laboral en Auxiliar de SST</option><option>Técnico en Primeros Auxilios y Emergencias</option><option>Técnico en Manejo Ambiental</option></optgroup>
             <optgroup label="Arquitectura y Diseño"><option>Arquitectura</option><option>Diseño Arquitectónico</option><option>Diseño de Interiores</option><option>Diseño Gráfico</option><option>Diseño Industrial</option></optgroup>
             <optgroup label="Ciencias de la Salud"><option>Medicina</option><option>Enfermería</option><option>Odontología</option><option>Farmacia</option><option>Bacteriología</option><option>Nutrición y Dietética</option><option>Fisioterapia</option><option>Fonoaudiología</option><option>Terapia Ocupacional</option><option>Optometría</option><option>Psicología</option><option>Medicina Veterinaria</option></optgroup>
-            <optgroup label="Ciencias Económicas y Administrativas"><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Economía</option><option>Mercadeo</option><option>Negocios Internacionales</option><option>Gestión Humana</option><option>Administración Pública</option><option>Comercio Exterior</option></optgroup>
+            <optgroup label="Ciencias Económicas y Administrativas"><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Economía</option><option>Finanzas y Relaciones Internacionales</option><option>Mercadeo</option><option>Negocios Internacionales</option><option>Gestión Humana</option><option>Administración Pública</option><option>Comercio Exterior</option></optgroup>
             <optgroup label="Ciencias Sociales, Jurídicas y Humanas"><option>Derecho</option><option>Trabajo Social</option><option>Comunicación Social</option><option>Periodismo</option><option>Publicidad</option><option>Ciencias Políticas</option></optgroup>
             <optgroup label="Tecnologías — Sistemas y Administración"><option>Tecnología en Sistemas</option><option>Tecnología en Gestión Empresarial</option><option>Tecnología en Logística</option><option>Tecnología en Electrónica</option><option>Técnico en Contabilidad</option><option>Técnico en Sistemas</option><option>Técnico en Electricidad</option></optgroup>
+            <optgroup label="Especializaciones — SST y Salud Ocupacional"><option>Especialización en Seguridad y Salud en el Trabajo</option><option>Especialización en Higiene y Seguridad Industrial</option><option>Especialización en Salud Ocupacional</option><option>Especialización en Gerencia de Riesgos Laborales</option><option>Especialización en Medicina del Trabajo</option><option>Especialización en Ergonomía Ocupacional</option><option>Especialización en Toxicología Industrial</option><option>Especialización en Seguridad Industrial y Minería</option></optgroup>
+            <optgroup label="Especializaciones — Gerencia de Proyectos"><option>Especialización en Gerencia de Proyectos</option><option>Especialización en Gestión de Proyectos de Construcción</option><option>Especialización en Dirección y Gestión de Proyectos</option><option>Especialización en Gerencia de Obra</option><option>Especialización en Interventoría de Obras</option><option>Especialización en Gestión de Infraestructura</option><option>Especialización en Planeación y Control de Proyectos</option></optgroup>
+            <optgroup label="Especializaciones — Ingeniería Civil y Obras"><option>Especialización en Ingeniería de Vías y Transporte</option><option>Especialización en Geotecnia y Cimentaciones</option><option>Especialización en Estructuras</option><option>Especialización en Hidráulica y Saneamiento Ambiental</option><option>Especialización en Diseño Sísmico de Estructuras</option><option>Especialización en Construcción Sostenible</option><option>Especialización en Ingeniería de Pavimentos</option><option>Especialización en Recursos Hídricos</option></optgroup>
+            <optgroup label="Especializaciones — Medio Ambiente"><option>Especialización en Gestión Ambiental</option><option>Especialización en Gestión Ambiental Empresarial</option><option>Especialización en Ingeniería Ambiental y Sanitaria</option><option>Especialización en Evaluación de Impacto Ambiental</option><option>Especialización en Gestión de Residuos Sólidos</option><option>Especialización en Cambio Climático y Desarrollo Sostenible</option></optgroup>
+            <optgroup label="Especializaciones — Administración y Gerencia"><option>Especialización en Gerencia de Empresas</option><option>Especialización en Alta Gerencia</option><option>Especialización en Finanzas Corporativas</option><option>Especialización en Gestión del Talento Humano</option><option>Especialización en Gestión Pública</option><option>Especialización en Contratación Estatal</option><option>Especialización en Logística y Cadena de Suministro</option></optgroup>
+            <optgroup label="Especializaciones — Derecho Laboral"><option>Especialización en Derecho Laboral y Seguridad Social</option><option>Especialización en Derecho Administrativo</option><option>Especialización en Derecho de la Construcción</option><option>Especialización en Contratación Laboral</option><option>Especialización en Seguridad Social Integral</option><option>Especialización en Riesgos Laborales y Pensiones</option></optgroup>
+            <optgroup label="Especializaciones — Calidad e ISO"><option>Especialización en Sistemas Integrados de Gestión</option><option>Especialización en Gestión de Calidad ISO 9001</option><option>Especialización en Gestión Ambiental ISO 14001</option><option>Especialización en SST ISO 45001</option><option>Especialización en Auditoría de Sistemas de Gestión</option><option>Especialización en Control de Calidad en Construcción</option></optgroup>
+            <optgroup label="Especializaciones — Mecánica, Eléctrica y Mantenimiento"><option>Especialización en Ingeniería de Mantenimiento</option><option>Especialización en Automatización Industrial</option><option>Especialización en Confiabilidad de Activos</option><option>Especialización en Sistemas de Potencia Eléctrica</option><option>Especialización en Energías Renovables</option><option>Especialización en Eficiencia Energética</option></optgroup>
+            <optgroup label="Maestrías — SST y Salud Ocupacional"><option>Maestría en Seguridad y Salud en el Trabajo</option><option>Maestría en Salud Ocupacional</option><option>Maestría en Higiene Industrial</option><option>Maestría en Prevención de Riesgos Laborales</option><option>Maestría en Epidemiología</option><option>Maestría en Toxicología</option></optgroup>
+            <optgroup label="Maestrías — Gerencia de Proyectos"><option>Maestría en Gerencia de Proyectos</option><option>Maestría en Project Management</option><option>Maestría en Gestión de Infraestructura</option><option>Maestría en Dirección de Proyectos de Construcción</option><option>Maestría en Interventoría y Supervisión de Obras</option></optgroup>
+            <optgroup label="Maestrías — Ingeniería Civil y Obras"><option>Maestría en Ingeniería Civil</option><option>Maestría en Ingeniería de Vías</option><option>Maestría en Geotecnia</option><option>Maestría en Estructuras</option><option>Maestría en Hidráulica</option><option>Maestría en Ingeniería de Pavimentos</option><option>Maestría en Construcción</option></optgroup>
+            <optgroup label="Maestrías — Medio Ambiente"><option>Maestría en Gestión Ambiental</option><option>Maestría en Ingeniería Ambiental</option><option>Maestría en Desarrollo Sostenible</option><option>Maestría en Cambio Climático</option><option>Maestría en Gestión de Recursos Naturales</option></optgroup>
+            <optgroup label="Maestrías — Administración y Gerencia"><option>Maestría en Administración de Empresas (MBA)</option><option>Maestría en Gerencia Empresarial</option><option>Maestría en Finanzas</option><option>Maestría en Gestión del Talento Humano</option><option>Maestría en Gestión Pública</option></optgroup>
+            <optgroup label="Maestrías — Derecho Laboral"><option>Maestría en Derecho Laboral y Seguridad Social</option><option>Maestría en Derecho Administrativo</option><option>Maestría en Seguridad Social</option></optgroup>
+            <optgroup label="Maestrías — Calidad e ISO"><option>Maestría en Sistemas Integrados de Gestión</option><option>Maestría en Gestión de Calidad</option><option>Maestría en Ingeniería Industrial</option></optgroup>
+            <optgroup label="Maestrías — Mecánica, Eléctrica y Mantenimiento"><option>Maestría en Ingeniería Mecánica</option><option>Maestría en Ingeniería Eléctrica</option><option>Maestría en Mantenimiento Industrial</option><option>Maestría en Automatización y Control</option><option>Maestría en Energías Renovables</option></optgroup>
+            <optgroup label="Doctorados"><option>Doctorado en Ingeniería Civil</option><option>Doctorado en Ingeniería Industrial</option><option>Doctorado en Ciencias Ambientales</option><option>Doctorado en Salud Pública</option><option>Doctorado en Administración</option><option>Doctorado en Ingeniería Mecánica</option><option>Otro Doctorado</option></optgroup>
             <optgroup label="Bachillerato"><option>Bachiller Académico</option><option>Bachiller Técnico</option><option>Bachiller Pedagógico</option></optgroup>
             <optgroup label="Cursos y certificaciones"><option>Certificación en Trabajo en Alturas (Coordinador)</option><option>Certificación en Trabajo en Alturas (Avanzado)</option><option>Certificación en Trabajo en Alturas (Básico)</option><option>Certificación en Espacios Confinados</option><option>Certificación en Manejo de Explosivos</option><option>Certificación en Primeros Auxilios</option><option>Certificación en Brigadas de Emergencia</option><option>Certificación en COPASST</option><option>Certificación en ISO 45001</option><option>Certificación en ISO 9001</option><option>Certificación en ISO 14001</option><option>Diplomado en Gerencia de Proyectos (PMI)</option><option>Certificación PMP</option><option>Certificación SENA</option><option>Curso de Inglés</option><option>Otro curso / certificación</option></optgroup>
             <optgroup label="─────────────────"><option value="__otro__">Otro (especifique)</option></optgroup>
