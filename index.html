@@ -472,8 +472,8 @@
         </div>
 
         <div class="field">
-          <label>Estado civil</label>
-          <select name="estado_civil">
+          <label>Estado civil <span class="req">*</span></label>
+          <select name="estado_civil" required>
             <option value="">Seleccione…</option>
             <option>Soltero/a</option>
             <option>Casado/a</option>
@@ -523,8 +523,8 @@
         </div>
 
         <div class="field span-2">
-          <label>Dirección de residencia</label>
-          <input type="text" name="direccion" placeholder="Ej: Calle 80 # 20-15, Apto 301">
+          <label>Dirección de residencia <span class="req">*</span></label>
+          <input type="text" name="direccion" placeholder="Ej: Calle 80 # 20-15, Apto 301" required>
         </div>
 
         <div class="field">
@@ -1222,7 +1222,7 @@
     btn.disabled = true;
 
     // ── Endpoint Apps Script ECG ─────────────────────────────────
-    const ENDPOINT = "https://script.google.com/macros/s/AKfycbxRHlTRCd_gdzhxnTxI16YX3ercHP9NxVc9d4FNAOZWMwSAeWttk9KQHKcgBcWrXB7s/exec";
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbwtqEw_2CHVwv_GFh-WS90YUJt5DamMXn9pZbgfFgeNsEkEqhD0_ujMybQIRf26E4nJ/exec";
 
     // ── Recoger estudios (todas las tarjetas) ────────────────────
     const estudios = [];
