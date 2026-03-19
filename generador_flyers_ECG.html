@@ -47,10 +47,13 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
 .bdl:hover{background:#0d2870;transform:translateY(-1px)}
 .pvc{display:flex;flex-direction:column;gap:10px}
 .pvl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mut)}
-.pvw{max-width:540px;margin:0 auto;width:100%}
+.pvw{max-width:540px;margin:0 auto;width:100%;overflow:hidden}
 
 /* ── FLYER BASE ── */
-#flyer{width:540px;height:540px;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(10,31,92,.22)}
+/* Flyer renderizado a 1080px nativos — escalado al 50% para la vista previa */
+#flyer-wrap{width:540px;height:540px;overflow:hidden;box-shadow:0 8px 40px rgba(10,31,92,.22);flex-shrink:0}
+#flyer{width:1080px;height:1080px;position:relative;overflow:hidden;
+  transform:scale(0.5);transform-origin:top left;}
 
 /* cada plantilla es un div que ocupa todo el flyer */
 .tpl{position:absolute;inset:0;display:none}
@@ -144,7 +147,7 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
   font-family:'DM Sans',sans-serif;font-size:7.5px;
   color:#fff;font-weight:600;white-space:nowrap;flex-shrink:0;
 }
-@media(max-width:900px){.ws{grid-template-columns:1fr}#flyer{width:100%;max-width:360px;height:360px;margin:0 auto}}
+@media(max-width:900px){.ws{grid-template-columns:1fr}#flyer-wrap{width:100%;max-width:360px;height:360px}#flyer{width:720px;height:720px}}
 </style>
 </head>
 <body>
@@ -207,14 +210,14 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
           <div class="tb" data-t="D" onclick="setTpl(this)"><span class="ti">⬒</span>Foto arriba</div>
         </div>
       </div>
-      <button class="bdl" onclick="dl()">⬇ Descargar PNG 1080×1080</button>
+      <button class="bdl" onclick="dl()">⬇ Descargar PNG 1080×1080 HD</button>
     </div>
   </div>
 
   <div class="pvc">
     <div class="pvl">Vista previa — 1080 × 1080 px</div>
     <div class="pvw">
-      <div id="flyer">
+      <div id="flyer-wrap"><div id="flyer">
 
         <!-- ══ PLANTILLA B — texto izq | foto der ══ -->
         <div class="tpl active" id="tB">
@@ -306,7 +309,7 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
         </div>
 
             </div>
-    </div>
+    </div></div>
     <p style="font-size:11px;color:var(--mut);text-align:center;margin-top:8px">1080×1080 px — LinkedIn e Instagram</p>
   </div>
 </div>
@@ -452,24 +455,33 @@ function setTpl(el) {
   });
 }
 
-// ── Descargar ─────────────────────────────────────
+// ── Descargar HD ─────────────────────────────────
 async function dl() {
   const flyer = document.getElementById('flyer');
   const cargo = document.getElementById('ic').value || 'oferta';
+  const btn = document.querySelector('.bdl');
+  btn.textContent = '⏳ Generando HD…';
+  btn.disabled = true;
   try {
+    // El flyer ya mide 1080×1080 px reales — capturamos sin escalar
     const canvas = await html2canvas(flyer, {
-      scale: 2,
+      scale: 1,          // 1:1 → 1080×1080 px exactos
       useCORS: true,
       allowTaint: true,
       backgroundColor: '#0A1F5C',
       logging: false,
+      width: 1080,
+      height: 1080,
     });
     const a = document.createElement('a');
     a.download = 'ECG_Oferta_' + cargo.replace(/[^a-zA-Z0-9]/g, '_') + '.png';
-    a.href = canvas.toDataURL('image/png');
+    a.href = canvas.toDataURL('image/png', 1.0);
     a.click();
   } catch(e) {
     alert('Error al generar la imagen. Inténtalo de nuevo.');
+  } finally {
+    btn.textContent = '⬇ Descargar PNG 1080×1080 HD HD';
+    btn.disabled = false;
   }
 }
 
@@ -480,12 +492,10 @@ function fitBloque() {
     const blq = document.getElementById('blq-' + t) || document.querySelector('#t' + t + ' .bloque');
     if (!blq) return;
     const parent = blq.parentElement;
-    // Reset
     blq.style.fontSize = '';
-    let size = 1.0; // factor multiplicador
-    const MIN = 0.6;
-    // Reducir si desborda
-    while (parent.scrollHeight > parent.clientHeight + 4 && size > MIN) {
+    let size = 1.0;
+    const MIN = 0.55;
+    while (parent.scrollHeight > parent.clientHeight + 6 && size > MIN) {
       size -= 0.02;
       blq.style.fontSize = size + 'em';
     }
