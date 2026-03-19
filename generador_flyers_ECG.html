@@ -58,13 +58,15 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
 
 /* ══ PLANTILLA A — imagen fondo, texto abajo ══ */
 #tA .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#1a3a6a}
-#tA .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,92,.5) 0%,rgba(10,31,92,.98) 48%)}
-#tA .body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+#tA .logo{position:absolute;top:22px;left:22px}
+#tA .frase{position:absolute;bottom:18px;right:22px;margin:0;padding:0;font-style:italic;color:#fff;font-size:9px}
+#tA .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,92,.15) 0%,rgba(10,31,92,.0) 35%,rgba(10,31,92,.97) 72%)}
+#tA .body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
 
 /* ══ PLANTILLA B — texto izq, foto der ══ */
 #tB{display:none;flex-direction:row}
 #tB.active{display:flex}
-#tB .left{width:54%;background:#0A1F5C;display:flex;flex-direction:column;justify-content:space-between;padding:22px 18px;flex-shrink:0;overflow:hidden}
+#tB .left{width:54%;background:#0A1F5C;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 18px;flex-shrink:0;overflow:hidden}
 #tB .right{flex:1;position:relative;overflow:hidden}
 #tB .right .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#1a3a6a}
 #tB .right .fade{position:absolute;inset:0;background:linear-gradient(90deg,#0A1F5C 0%,transparent 55%)}
@@ -75,20 +77,21 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
 #tC .left{flex:1;position:relative;overflow:hidden}
 #tC .left .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#1a3a6a}
 #tC .left .fade{position:absolute;inset:0;background:linear-gradient(270deg,#0A1F5C 0%,transparent 55%)}
-#tC .right{width:54%;background:#0A1F5C;display:flex;flex-direction:column;justify-content:space-between;padding:22px 18px;flex-shrink:0;overflow:hidden}
+#tC .right{width:54%;background:#0A1F5C;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 18px;flex-shrink:0;overflow:hidden}
 
 /* ══ PLANTILLA D — foto arriba, texto abajo ══ */
 #tD{display:none;flex-direction:column}
 #tD.active{display:flex}
-#tD .top{height:46%;position:relative;overflow:hidden;flex-shrink:0}
+#tD .top{height:62%;position:relative;overflow:hidden;flex-shrink:0}
 #tD .top .bg{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#1a3a6a}
 #tD .top .fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,#0A1F5C 100%)}
-#tD .bot{flex:1;background:#0A1F5C;display:flex;flex-direction:column;justify-content:space-between;padding:14px 22px 20px;overflow:hidden}
+#tD .bot{flex:1;background:#0A1F5C;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 22px 14px;overflow:hidden}
 
 /* ── Componentes del flyer ── */
 .logo{display:flex;flex-direction:column;flex-shrink:0;margin-bottom:0}
 .logo img{height:32px;width:auto;display:block;object-fit:contain}
 
+.frase{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:400;font-style:italic;color:#ffffff;letter-spacing:0.3px;flex-shrink:0;padding-top:8px}
 /* Bloque inferior: contiene badge, barra, cargo, tags, bottom */
 .bloque{display:flex;flex-direction:column;overflow:hidden;min-height:0}
 
@@ -159,7 +162,8 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
     <div class="pb">
       <div class="fld"><label>Cargo / Puesto</label><input id="ic" placeholder="Ej: Ingeniero Civil Residente" oninput="upd()"></div>
       <div class="fld"><label>Ciudad · Modalidad</label><input id="iciu" placeholder="Ej: Bogotá · Presencial" oninput="upd()"></div>
-      <div class="fld"><label>Experiencia requerida</label><input id="iex" placeholder="Ej: 3+ años" oninput="upd()"></div>
+      <div class="fld"><label>Experiencia general</label><input id="iex" placeholder="Ej: 5+ años de experiencia" oninput="upd()"></div>
+      <div class="fld"><label>Experiencia específica</label><input id="iexe" placeholder="Ej: 3 años en interventoría de obras" oninput="upd()"></div>
       <div class="fld"><label>Tipo de contrato</label>
         <select id="ico" onchange="upd()">
           <option value="">Seleccione…</option>
@@ -169,6 +173,9 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
       </div>
       <div class="fld"><label>Rango salarial</label><input id="isa" placeholder="Ej: $4.5M – $6M COP" oninput="upd()"></div>
       <div class="fld"><label>Link del formulario</label><input id="ilk" value="euroconsultsc.github.io/HV_ECG" oninput="upd()"></div>
+      <hr class="dv">
+      <div class="fld"><label>Profesión requerida</label><input id="iprof" placeholder="Ej: Ingeniería Civil o afines" oninput="upd()"></div>
+      <div class="fld"><label>Postgrado requerido</label><input id="ipost" placeholder="Ej: Especialización en Gerencia de Proyectos" oninput="upd()"></div>
       <hr class="dv">
       <div class="fld">
         <label>Foto del proyecto</label>
@@ -227,12 +234,16 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
                 <div class="tag"><span class="dot" id="d-A1"></span><span id="ciu-A">Ciudad · Modalidad</span></div>
                 <div class="tag"><span class="dot" id="d-A2"></span><span id="ex-A">Experiencia</span></div>
                 <div class="tag"><span class="dot" id="d-A3"></span><span id="co-A">Contrato</span></div>
+                <div class="tag" id="tag-exe-A" style="display:none"><span class="dot" id="d-A6"></span><span id="exe-A"></span></div>
+                <div class="tag" id="tag-prof-A" style="display:none"><span class="dot" id="d-A4"></span><span id="prof-A"></span></div>
+                <div class="tag" id="tag-post-A" style="display:none"><span class="dot" id="d-A5"></span><span id="post-A"></span></div>
               </div>
               <div class="bottom">
                 <div class="sal-w"><span class="sal-l">Salario</span><span class="sal-v" id="sal-A">A convenir</span></div>
                 <div class="lnk-w"><span class="lnk-l">Aplica aquí</span><span class="lnk-v" id="lnk-A"></span></div>
               </div>
             </div>
+          <div class="frase">"Hacemos que las cosas pasen"</div>
           </div>
         </div>
 
@@ -248,6 +259,9 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
                 <div class="tag"><span class="dot" id="d-B1"></span><span id="ciu-B">Ciudad · Modalidad</span></div>
                 <div class="tag"><span class="dot" id="d-B2"></span><span id="ex-B">Experiencia</span></div>
                 <div class="tag"><span class="dot" id="d-B3"></span><span id="co-B">Contrato</span></div>
+                <div class="tag" id="tag-exe-B" style="display:none"><span class="dot" id="d-B6"></span><span id="exe-B"></span></div>
+                <div class="tag" id="tag-prof-B" style="display:none"><span class="dot" id="d-B4"></span><span id="prof-B"></span></div>
+                <div class="tag" id="tag-post-B" style="display:none"><span class="dot" id="d-B5"></span><span id="post-B"></span></div>
               </div>
               <div class="bottom">
                 <div class="sal-w"><span class="sal-l">Salario</span><span class="sal-v" id="sal-B">A convenir</span></div>
@@ -258,7 +272,7 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
           <div class="right">
             <div class="bg" id="bgB"></div>
             <div class="fade"></div>
-          </div>
+          <div class="frase">"Hacemos que las cosas pasen"</div>
         </div>
 
         <!-- ══ PLANTILLA C — foto izq | texto der ══ -->
@@ -277,13 +291,16 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
                 <div class="tag"><span class="dot" id="d-C1"></span><span id="ciu-C">Ciudad · Modalidad</span></div>
                 <div class="tag"><span class="dot" id="d-C2"></span><span id="ex-C">Experiencia</span></div>
                 <div class="tag"><span class="dot" id="d-C3"></span><span id="co-C">Contrato</span></div>
+                <div class="tag" id="tag-exe-C" style="display:none"><span class="dot" id="d-C6"></span><span id="exe-C"></span></div>
+                <div class="tag" id="tag-prof-C" style="display:none"><span class="dot" id="d-C4"></span><span id="prof-C"></span></div>
+                <div class="tag" id="tag-post-C" style="display:none"><span class="dot" id="d-C5"></span><span id="post-C"></span></div>
               </div>
               <div class="bottom">
                 <div class="sal-w"><span class="sal-l">Salario</span><span class="sal-v" id="sal-C">A convenir</span></div>
                 <div class="lnk-w"><span class="lnk-l">Aplica aquí</span><span class="lnk-v" id="lnk-C"></span></div>
               </div>
             </div>
-          </div>
+          <div class="frase">"Hacemos que las cosas pasen"</div>
         </div>
 
         <!-- ══ PLANTILLA D — foto arriba | texto abajo ══ -->
@@ -302,6 +319,9 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
                 <div class="tag"><span class="dot" id="d-D1"></span><span id="ciu-D">Ciudad · Modalidad</span></div>
                 <div class="tag"><span class="dot" id="d-D2"></span><span id="ex-D">Experiencia</span></div>
                 <div class="tag"><span class="dot" id="d-D3"></span><span id="co-D">Contrato</span></div>
+                <div class="tag" id="tag-exe-D" style="display:none"><span class="dot" id="d-D6"></span><span id="exe-D"></span></div>
+                <div class="tag" id="tag-prof-D" style="display:none"><span class="dot" id="d-D4"></span><span id="prof-D"></span></div>
+                <div class="tag" id="tag-post-D" style="display:none"><span class="dot" id="d-D5"></span><span id="post-D"></span></div>
               </div>
               <div class="bottom">
                 <div class="sal-w"><span class="sal-l">Salario</span><span class="sal-v" id="sal-D">A convenir</span></div>
@@ -311,6 +331,7 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
           </div>
         </div>
 
+        <div class="frase">"Hacemos que las cosas pasen"</div>
       </div>
     </div>
     <p style="font-size:11px;color:var(--mut);text-align:center;margin-top:8px">1080×1080 px — LinkedIn e Instagram</p>
@@ -368,15 +389,57 @@ function upd() {
   const co    = document.getElementById('ico').value  || 'Tipo de contrato';
   const sa    = document.getElementById('isa').value  || 'A convenir';
   const lk    = document.getElementById('ilk').value  || 'euroconsultsc.github.io/HV_ECG';
+  const exe   = document.getElementById('iexe')  ? document.getElementById('iexe').value.trim()  : '';
+  const prof  = document.getElementById('iprof') ? document.getElementById('iprof').value.trim() : '';
+  const post  = document.getElementById('ipost') ? document.getElementById('ipost').value.trim() : '';
 
   TPLS.forEach(t => {
     const g = id => document.getElementById(id + '-' + t);
     if (g('car')) g('car').textContent = cargo;
     if (g('ciu')) g('ciu').textContent = ciu;
     if (g('ex'))  g('ex').textContent  = ex;
+    // Experiencia específica
+    const tagExe = document.getElementById('tag-exe-' + t);
+    const spanExe = document.getElementById('exe-' + t);
+    const dot6 = document.getElementById('d-' + t + '6');
+    if (tagExe && spanExe) {
+      if (exe) {
+        spanExe.textContent = exe;
+        tagExe.style.display = 'flex';
+        if (dot6) dot6.style.background = acc;
+      } else {
+        tagExe.style.display = 'none';
+      }
+    }
     if (g('co'))  g('co').textContent  = co;
     if (g('sal')) g('sal').textContent = sa;
     if (g('lnk')) g('lnk').textContent = lk;
+    // Profesión requerida
+    const tagProf = document.getElementById('tag-prof-' + t);
+    const spanProf = document.getElementById('prof-' + t);
+    const dot4 = document.getElementById('d-' + t + '4');
+    if (tagProf && spanProf) {
+      if (prof) {
+        spanProf.textContent = prof;
+        tagProf.style.display = 'flex';
+        if (dot4) dot4.style.background = acc;
+      } else {
+        tagProf.style.display = 'none';
+      }
+    }
+    // Postgrado requerido
+    const tagPost = document.getElementById('tag-post-' + t);
+    const spanPost = document.getElementById('post-' + t);
+    const dot5 = document.getElementById('d-' + t + '5');
+    if (tagPost && spanPost) {
+      if (post) {
+        spanPost.textContent = post;
+        tagPost.style.display = 'flex';
+        if (dot5) dot5.style.background = acc;
+      } else {
+        tagPost.style.display = 'none';
+      }
+    }
   });
 }
 
@@ -394,7 +457,7 @@ function applyAcc() {
     const bar = document.getElementById('bar-' + t);
     if (lbl) lbl.style.background = acc;
     if (bar) bar.style.background = acc;
-    [1,2,3].forEach(n => {
+    [1,2,3,4,5,6].forEach(n => {
       const d = document.getElementById('d-' + t + n);
       if (d) d.style.background = acc;
     });
