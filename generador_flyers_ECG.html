@@ -57,22 +57,20 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
 .tpl.active{display:block}
 
 /* ══ PLANTILLA B — panel texto izq | foto der ══ */
-/* La foto es absoluta y cubre EXACTAMENTE desde el borde del panel hasta el borde derecho */
 #tB{position:relative;display:none}
 #tB.active{display:block}
-/* Foto de fondo: absolute, cubre todo el flyer, la vemos solo en la zona derecha */
+/* Foto: absolute, cubre TODO el flyer */
 #tB .bg-full{position:absolute;top:0;left:0;right:0;bottom:0;
   background-size:cover;background-position:center center;
   background-color:#1a3a6a;z-index:0}
-/* Panel texto: 58% de ancho, encima de la foto, tapa la zona izquierda */
-#tB .left{position:relative;z-index:2;width:58%;height:100%;background:#0A1F5C;
+/* Panel texto: absolute, pegado a la izquierda, 58% del ancho */
+#tB .left{position:absolute;top:0;left:0;bottom:0;width:58%;
+  background:#0A1F5C;z-index:2;
   display:flex;flex-direction:column;justify-content:flex-start;
-  padding:18px 24px 16px;overflow:hidden;float:left}
-/* Fade: difumina el borde derecho del panel de texto hacia la foto */
-#tB .left::after{content:'';position:absolute;top:0;right:-40px;width:40px;height:100%;
-  background:linear-gradient(90deg,#0A1F5C,transparent);z-index:3;pointer-events:none}
-/* Limpia el float */
-#tB::after{content:'';display:table;clear:both}
+  padding:18px 24px 16px;overflow:hidden}
+/* Fade suave del panel hacia la foto */
+#tB .left::after{content:'';position:absolute;top:0;right:-36px;bottom:0;width:36px;
+  background:linear-gradient(to right,#0A1F5C,transparent);pointer-events:none}
 
 /* ══ PLANTILLA C — foto izq | panel texto der ══ */
 #tC{position:relative;display:none}
@@ -80,13 +78,14 @@ hr.dv{border:none;border-top:1px solid var(--brd)}
 #tC .bg-full{position:absolute;top:0;left:0;right:0;bottom:0;
   background-size:cover;background-position:center center;
   background-color:#1a3a6a;z-index:0}
-/* Panel texto: 58%, pegado a la derecha */
-#tC .right{position:absolute;z-index:2;right:0;top:0;width:58%;height:100%;
-  background:#0A1F5C;display:flex;flex-direction:column;justify-content:flex-start;
+/* Panel texto: absolute, pegado a la derecha, 58% del ancho */
+#tC .right{position:absolute;top:0;right:0;bottom:0;width:58%;
+  background:#0A1F5C;z-index:2;
+  display:flex;flex-direction:column;justify-content:flex-start;
   padding:18px 24px 16px;overflow:hidden}
-/* Fade: difumina el borde izquierdo del panel de texto hacia la foto */
-#tC .right::before{content:'';position:absolute;top:0;left:-40px;width:40px;height:100%;
-  background:linear-gradient(270deg,#0A1F5C,transparent);z-index:3;pointer-events:none}
+/* Fade suave del panel hacia la foto */
+#tC .right::before{content:'';position:absolute;top:0;left:-36px;bottom:0;width:36px;
+  background:linear-gradient(to left,#0A1F5C,transparent);pointer-events:none}
 
 /* ══ PLANTILLA D — foto arriba | panel texto abajo ══ */
 #tD{display:none;flex-direction:column}
@@ -469,72 +468,44 @@ function setTpl(el) {
 
 // ── Descargar HD ─────────────────────────────────
 async function dl() {
-  const src   = document.getElementById('flyer');
+  const flyer = document.getElementById('flyer');
   const cargo = document.getElementById('ic').value || 'oferta';
   const btn   = document.querySelector('.bdl');
   btn.textContent = '⏳ Generando HD…';
   btn.disabled = true;
 
   try {
-    // ── Clonar el flyer en un contenedor fuera de pantalla ──────────────
-    const W = 540, H = 540, SCALE = 2;
+    const SCALE = 2;
 
-    const wrap = document.createElement('div');
-    Object.assign(wrap.style, {
-      position: 'fixed', top: '-9999px', left: '-9999px',
-      width: W + 'px', height: H + 'px', overflow: 'hidden',
-      background: '#0A1F5C', zIndex: '-1',
-    });
-
-    const clone = src.cloneNode(true);
-    Object.assign(clone.style, {
-      width: W + 'px', height: H + 'px',
-      position: 'relative', transform: 'none',
-      boxShadow: 'none', overflow: 'hidden',
-    });
-
-    // Copiar todos los estilos relevantes de cada .bg al clon
-    // Copiar imagen a todos los elementos bg (tanto .bg como .bg-full)
-    src.querySelectorAll('[id^="bg"]').forEach(el => {
-      const id = el.id;
-      const cloneEl = clone.querySelector('#' + id);
-      if (cloneEl) {
-        const cs = getComputedStyle(el);
-        cloneEl.style.backgroundImage    = el.style.backgroundImage || cs.backgroundImage;
-        cloneEl.style.backgroundSize     = 'cover';
-        cloneEl.style.backgroundPosition = 'center center';
-        cloneEl.style.backgroundRepeat   = 'no-repeat';
-      }
-    });
-
-    wrap.appendChild(clone);
-    document.body.appendChild(wrap);
-
-    // Pequeño delay para que el DOM se pinte
-    await new Promise(r => setTimeout(r, 80));
-
-    // ── Capturar a 2× → canvas exacto de 1080×1080 ──────────────────────
-    const raw = await html2canvas(clone, {
+    // Capturar directamente el elemento #flyer tal como se ve —
+    // html2canvas con scale:2 produce canvas de 1080×1080 exactos
+    const raw = await html2canvas(flyer, {
       scale: SCALE,
       useCORS: true,
       allowTaint: true,
       backgroundColor: '#0A1F5C',
       logging: false,
       imageTimeout: 0,
-      width: W, height: H,
-      windowWidth: W, windowHeight: H,
+      // Forzar dimensiones exactas del flyer
+      width:  flyer.offsetWidth,
+      height: flyer.offsetHeight,
+      // Ignorar scroll de la página
+      scrollX: 0,
+      scrollY: 0,
+      x: 0,
+      y: 0,
     });
 
-    document.body.removeChild(wrap);
-
-    // ── Recortar exactamente W*SCALE × H*SCALE ───────────────────────────
+    // Recortar exactamente 1080×1080 del canvas resultante
+    const W = flyer.offsetWidth  * SCALE;  // 1080
+    const H = flyer.offsetHeight * SCALE;  // 1080
     const out = document.createElement('canvas');
-    out.width  = W * SCALE;   // 1080
-    out.height = H * SCALE;   // 1080
+    out.width  = W;
+    out.height = H;
     const ctx = out.getContext('2d');
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(raw, 0, 0, W * SCALE, H * SCALE, 0, 0, W * SCALE, H * SCALE);
+    ctx.drawImage(raw, 0, 0, W, H, 0, 0, W, H);
 
     const a = document.createElement('a');
     a.download = 'ECG_Oferta_' + cargo.replace(/[^a-zA-Z0-9]/g, '_') + '.png';
@@ -543,7 +514,7 @@ async function dl() {
 
   } catch(e) {
     console.error(e);
-    alert('Error al generar la imagen: ' + e.message);
+    alert('Error: ' + e.message);
   } finally {
     btn.textContent = '⬇ Descargar PNG 1080×1080 HD';
     btn.disabled = false;
